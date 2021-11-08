@@ -149,11 +149,11 @@ def main(args):
     if os.path.exists(model_save_path):
         if args.force_del:
             shutil.rmtree(model_save_path)
-            os.mkdir(model_save_path)
+            os.mkdirs(model_save_path)
         else:
             raise ValueError("Existing output_dir for save model")
     else:
-        os.mkdir(model_save_path)
+        os.mkdirs(model_save_path)
     
     # Tensorboard writer
     tensorboard_writer = SummaryWriter(args.tensorboard_log_dir or os.path.join(model_save_path, "logs"))
@@ -235,7 +235,7 @@ def main(args):
     elif args.train_data=="mrpc":
         logging.info(f"Read {args.train_data.upper()} train dataset")
         train_samples = load_senteval_mrpc(need_label=False, use_all_unsupervised_texts=True, no_pair=True)
-        
+
     
     
     if args.data_proportion != 1.0:

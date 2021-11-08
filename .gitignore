@@ -5,12 +5,15 @@
 /bert-large-chinese
 /chinese-roberta-wwm-ext
 /chinese-roberta-wwm-ext-large
+/roberta-base
+/roberta-large
 /declutr-base
 /pretrain_model
 /datasets
 /output
 /final_output
 /analysis
+/data/mosesdecoder
 /data/downstream
 /data/chinese
 __pycache__
@@ -26,3 +29,4 @@ nohup.*
 /figures
 make_figures.py
 all.sh
+*./.DS_Store
